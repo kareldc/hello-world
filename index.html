@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EDUGO De Brug</title>
+  <meta name="description" content="EDUGO De Brug — samen leren, samen groeien.">
+  <style>
+    :root {
+      --brand: #1f5f8b;
+      --brand-dark: #154566;
+      --accent: #f2a541;
+      --bg: #ffffff;
+      --bg-soft: #f4f7fa;
+      --text: #1d2730;
+      --muted: #5b6875;
+      --line: #dde4ea;
+      --radius: 12px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --brand: #6fb1de;
+        --brand-dark: #4b93c4;
+        --bg: #11171c;
+        --bg-soft: #18212a;
+        --text: #e6edf3;
+        --muted: #9aa8b5;
+        --line: #2a3742;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+    a { color: var(--brand); }
+    .wrap { max-width: 1080px; margin: 0 auto; padding-inline: 20px; }
+
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-block: 14px; }
+    .logo { font-weight: 800; font-size: 1.25rem; color: var(--text); text-decoration: none; }
+    .logo span { color: var(--brand); }
+    nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 20px; margin: 0; padding: 0; }
+    nav a { color: var(--muted); text-decoration: none; font-weight: 500; }
+    nav a:hover { color: var(--brand); }
+
+    .hero {
+      background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+      color: #fff;
+      padding-block: 88px 96px;
+    }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; margin: 0 0 16px; }
+    .hero p { font-size: 1.2rem; max-width: 40ch; margin: 0 0 28px; opacity: .92; }
+    .btn {
+      display: inline-block; padding: 12px 22px; border-radius: 999px;
+      background: var(--accent); color: #1d2730; font-weight: 700; text-decoration: none;
+    }
+    .btn.ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.7); margin-left: 8px; }
+
+    section { padding-block: 72px; }
+    section.soft { background: var(--bg-soft); }
+    h2 { font-size: 1.9rem; margin: 0 0 8px; }
+    .lead { color: var(--muted); margin: 0 0 36px; max-width: 60ch; }
+
+    .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .card {
+      background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 24px;
+    }
+    .card h3 { margin: 0 0 8px; font-size: 1.15rem; }
+    .card p { margin: 0; color: var(--muted); }
+    .icon { font-size: 1.8rem; margin-bottom: 8px; }
+    .date { font-size: .85rem; font-weight: 600; color: var(--brand); text-transform: uppercase; letter-spacing: .04em; }
+
+    .steps { counter-reset: step; list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
+    .steps li { counter-increment: step; display: flex; gap: 16px; align-items: flex-start; }
+    .steps li::before {
+      content: counter(step); flex: none; width: 36px; height: 36px; border-radius: 50%;
+      display: grid; place-items: center; background: var(--brand); color: #fff; font-weight: 700;
+    }
+
+    .contact { display: grid; gap: 32px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 8px 16px; }
+    dt { font-weight: 600; }
+    dd { margin: 0; color: var(--muted); }
+    .todo { background: #fff3cd; color: #6b4e00; padding: 0 4px; border-radius: 4px; }
+
+    footer { border-top: 1px solid var(--line); padding-block: 28px; color: var(--muted); font-size: .9rem; }
+    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="#">EDUGO <span>De Brug</span></a>
+      <nav aria-label="Hoofdmenu">
+        <ul>
+          <li><a href="#over-ons">Over ons</a></li>
+          <li><a href="#nieuws">Nieuws</a></li>
+          <li><a href="#inschrijven">Inschrijven</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="wrap">
+        <h1>Welkom op De Brug</h1>
+        <p>Samen leren, samen groeien. Een warme school waar elk kind telt.</p>
+        <a class="btn" href="#inschrijven">Inschrijven</a>
+        <a class="btn ghost" href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <section id="over-ons">
+      <div class="wrap">
+        <h2>Over onze school</h2>
+        <p class="lead">De Brug maakt deel uit van scholengroep EDUGO. We bouwen bruggen tussen leerlingen, ouders en leerkrachten.</p>
+        <div class="grid">
+          <div class="card">
+            <div class="icon" aria-hidden="true">🤝</div>
+            <h3>Samen</h3>
+            <p>Ouders, leerlingen en leerkrachten werken nauw samen aan het welzijn van elk kind.</p>
+          </div>
+          <div class="card">
+            <div class="icon" aria-hidden="true">📚</div>
+            <h3>Leren</h3>
+            <p>Sterk onderwijs op maat, met aandacht voor wat elke leerling nodig heeft.</p>
+          </div>
+          <div class="card">
+            <div class="icon" aria-hidden="true">🌱</div>
+            <h3>Groeien</h3>
+            <p>Ruimte om talenten te ontdekken, in de klas en daarbuiten.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="nieuws" class="soft">
+      <div class="wrap">
+        <h2>Nieuws</h2>
+        <p class="lead">Wat er binnenkort op school gebeurt.</p>
+        <div class="grid">
+          <article class="card">
+            <div class="date"><span class="todo">Datum</span></div>
+            <h3>Infoavond voor nieuwe ouders</h3>
+            <p><span class="todo">Vul hier de details van het evenement in.</span></p>
+          </article>
+          <article class="card">
+            <div class="date"><span class="todo">Datum</span></div>
+            <h3>Schoolfeest</h3>
+            <p><span class="todo">Vul hier de details van het evenement in.</span></p>
+          </article>
+          <article class="card">
+            <div class="date"><span class="todo">Datum</span></div>
+            <h3>Pedagogische studiedag</h3>
+            <p><span class="todo">Vul hier de details in (geen les voor de leerlingen).</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="inschrijven">
+      <div class="wrap">
+        <h2>Inschrijven</h2>
+        <p class="lead">Wil je je kind inschrijven op De Brug? Zo gaat het in zijn werk.</p>
+        <ol class="steps">
+          <li><div><strong>Maak kennis.</strong> Kom langs op een infomoment of maak een afspraak voor een rondleiding.</div></li>
+          <li><div><strong>Meld je aan.</strong> Volg de aanmeldingsprocedure en kalender van de Stad Gent.</div></li>
+          <li><div><strong>Schrijf in.</strong> Na toewijzing van een plaats bevestig je de inschrijving op school.</div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="contact" class="soft">
+      <div class="wrap contact">
+        <div>
+          <h2>Contact</h2>
+          <p class="lead">Vragen? We helpen je graag verder.</p>
+        </div>
+        <dl>
+          <dt>Adres</dt>   <dd><span class="todo">Straat en nummer, postcode Gent</span></dd>
+          <dt>Telefoon</dt><dd><span class="todo">09 xxx xx xx</span></dd>
+          <dt>E-mail</dt>  <dd><span class="todo">info@…</span></dd>
+          <dt>Uren</dt>    <dd><span class="todo">ma–vr, 8.00–16.00</span></dd>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="jaar">2026</span> EDUGO De Brug</span>
+      <span>Deel van scholengroep EDUGO</span>
+    </div>
+  </footer>
+  <script>document.getElementById("jaar").textContent = new Date().getFullYear();</script>
+</body>
+</html>
